@@ -22,7 +22,7 @@ curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookie.txt');  // არ წაშალ�
 $answer = curl_exec($ch);
 
 if (curl_error($ch)) {
-    echo curl_error($ch);
+    echo curl_error($ch)."/n";
 }
 
 // გაგზავნა
@@ -30,11 +30,11 @@ curl_setopt($ch, CURLOPT_URL, 'http://www.magtifun.ge/scripts/sms_send.php');
 curl_setopt($ch, CURLOPT_POSTFIELDS, "recipients=$to&message_body=$text <sms.any.ge>");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_COOKIESESSION, true);
-curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookie-name'); 
-curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookie.txt');
+curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookie-name-send'); 
+curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookie-send.txt');
 $answer = curl_exec($ch);
 if (curl_error($ch)) {
-    echo curl_error($ch);
+    echo curl_error($ch)."/n";
 }
 
 echo $answer;
