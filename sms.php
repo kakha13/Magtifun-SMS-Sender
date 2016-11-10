@@ -22,7 +22,7 @@ function magtifun_function_sms($username,$password,$to, $text) {
 	curl_setopt($ch, CURLOPT_COOKIEJAR, $a='cookie-name_INFO'.rand(1,9999)	  );	// ამის გარეშე არ იმუშავებს
 	curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookie-file_INFO'.rand(1,9999).'.ext');	// ამის გარეშე არ იმუშავებს
 	curl_exec($ch);		
-	if (curl_error($ch)) {	echo "LOGIN_CURL_ERROR:".curl_error($ch)."/n";	}
+	if (curl_error($ch)) {	echo "LOGIN_CURL_ERROR:".curl_error($ch)."\n";	}
 	// გაგზავნა
 	curl_setopt($ch, CURLOPT_URL, 'http://www.magtifun.ge/scripts/sms_send.php');
 	curl_setopt($ch, CURLOPT_POSTFIELDS, "recipients=$to&message_body=$text");
@@ -31,7 +31,7 @@ function magtifun_function_sms($username,$password,$to, $text) {
 	curl_setopt($ch, CURLOPT_COOKIEJAR, $b='cookie-name_SEND'.rand(1,9999) ); 
 	curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookie-file_SEND'.rand(1,9999).'.ext');
 	$answer = curl_exec($ch);
-	if (curl_error($ch)) {	echo "SENDING_CURL_ERROR:".curl_error($ch)."/n";	}
+	if (curl_error($ch)) {	echo "SENDING_CURL_ERROR:".curl_error($ch)."\n";	}
 	curl_close ( $ch ); @unlink($a); @unlink($b);
 	return $answer;
 }
