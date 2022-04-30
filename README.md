@@ -1,4 +1,5 @@
 # Magtifun-SMS-Sender
+გადავედით ახალ რეპოზიტორიზე : https://github.com/kakha13/node-magtifun-sms-sender
 
 index.html არის ფაილი საიდანაც გადასცემთ ინფორმაციას sms.php-ს 
 --------------
